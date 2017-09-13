@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Panel</title>
+    
+    <link rel="icon" type="ico" href="fav.ico">
+    
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="center">
+    <div class="content" id="form" style="top: 0px; opacity: 1;">
+        <div id="logotop"></div> 
+        <div class="searcharea">
+            <form method="get" action="https://duckduckgo.com/">
+                <input type="text" class="quack" name="q" autocomplete="off" placeholder="Type stuff here"/>
+            </form>
+        </div>
+        <div class="searchengines">
+            <img src="duckduckgo.png" title="DuckDuckGo" id="ddg">
+            <img src="google.png" title="Google" id="g">
+            <img src="googol.png" title="Googol" id="gl">
+            <img src="wikipedia.png" title="Wikipedia" id="w">
+            <img src="youtube.png" title="YouTube" id="yt">
+            <img src="bing.png" title="Bing" id="bing">
+            <img src="yahoo.png" title="Yahoo" id="y">
+            <img src="startpage.png" title="Startpage" id="sp">
+            <img src="1337x.png" title="1337x" id="1337x">
+            <img src="searx.png" title="Searx" id="searx">
+            <img src="geo.png" title="GeoIP" id="geo">
+        </div>
+        <div id="links">
+            <div class="TOOLS">
+                <div class="link4">
+                    TOOLS<br>
+                    <img src="link4.png">
+                </div>
+                <a href="https://zbigz.unihax.in/" title="zbigz">
+                    <span class="fa fa-link"></span>
+                    <div id="link">zbigz</div>
+                </a>
+                <a href="http://localhost/phpmyadmin/" title="phpMyAdmin">
+                    <span class="fa fa-database"></span>
+                    <div id="link">phpMyAdmin</div>
+                </a>
+                <a href="https://free.carrade.eu/" title="Proxy">
+                    <span class="fa fa-user-secret"></span>
+                    <div id="link">Proxy</div>
+                </a>
+                <a href="https://gchq.github.io/CyberChef/" title="CyberChef">
+                    <span class="fa fa-scissors"></span>
+                    <div id="link">CyberChef</div>
+                </a>
+            </div>
+
+            <div class="WORK">
+                <div class="link2">
+                    WORK<br>
+                    <img src="link2.png">
+                </div>
+                <a href="http://localhost/snippetvamp/" title="SnippetVamp">
+                    <span class="fa fa-align-left"></span>
+                    <div id="link">SnippetVamp</div>
+                </a>
+                <a href="http://localhost/kanboard/" title="Kanboard">
+                    <span class="fa fa-list"></span>
+                    <div id="link">Kanboard</div>
+                </a>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="ENTERTAINMENT">
+                <a href="https://127.0.0.1:32400/web/index.html" title="Plex">
+                    <span class="fa fa-film"></span>
+                    <div id="link">Plex</div>
+                </a>
+                <a href="http://dojin.co/" title="Dojin.co">
+                    <span class="fa fa-headphones"></span>
+                    <div id="link">Dojin.co</div>
+                </a>
+                <a href="https://www.commafeed.com" title="CommaFeed">
+                    <span class="fa fa-rss"></span>
+                    <div id="link">CommaFeed</div>
+                </a>
+                <a href="https://xkcd.com/" title="xkcd">
+                    <span class="fa fa-commenting-o"></span>
+                    <div id="link">xkcd</div>
+                </a>
+                <div class="link4">
+                    <img src="link4_rev.png"><br>
+                    ENTERTAINMENT
+                </div>
+            </div>
+
+            <div class="MISC">
+                <a href="https://readityourself.net/" title="Read It Yourself">
+                    <span class="fa fa-book"></span>
+                    <div id="link">Read It Y...</div>
+                </a>
+                <a href="http://localhost/wallabag/web/" title="Wallabag">
+                    <span class="fa fa-clock-o"></span>
+                    <div id="link">Wallabag</div>
+                </a>
+                <div class="link2">
+                    <img src="link2_rev.png"><br>
+                    MISC.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementsByClassName('searchengines')[0].style.display = 'inherit';
+    var resetEngines = function() {
+        document.getElementById('ddg').style.border = '1px solid #252525';
+        document.getElementById('g').style.border = '1px solid #252525';
+        document.getElementById('gl').style.border = '1px solid #252525';
+        document.getElementById('w').style.border = '1px solid #252525';
+        document.getElementById('yt').style.border = '1px solid #252525';
+        document.getElementById('bing').style.border = '1px solid #252525';
+        document.getElementById('y').style.border = '1px solid #252525';
+        document.getElementById('sp').style.border = '1px solid #252525';
+        document.getElementById('1337x').style.border = '1px solid #252525';
+        document.getElementById('geo').style.border = '1px solid #252525';
+        document.getElementById('searx').style.border = '1px solid #252525';
+    };
+function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+    document.getElementById('ddg').addEventListener('click', function() {resetEngines();document.getElementById('ddg').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'ddg');document.getElementsByTagName('form')[0].action = 'https://duckduckgo.com';document.getElementsByTagName('input')[0].name = 'q';}, false);
+    document.getElementById('g').addEventListener('click', function() {resetEngines();document.getElementById('g').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'g');document.getElementsByTagName('form')[0].action = 'https://google.com/search';document.getElementsByTagName('input')[0].name = 'q';}, false);
+    document.getElementById('gl').addEventListener('click', function() {resetEngines();document.getElementById('gl').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'gl');document.getElementsByTagName('form')[0].action = 'https://googol.warriordudimanche.net/';document.getElementsByTagName('input')[0].name = 'q';}, false);
+    document.getElementById('w').addEventListener('click', function() {resetEngines();document.getElementById('w').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'w');document.getElementsByTagName('form')[0].action = 'https://en.wikipedia.org/w/index.php';document.getElementsByTagName('input')[0].name = 'search';}, false);
+    document.getElementById('yt').addEventListener('click', function() {resetEngines();document.getElementById('yt').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'yt');document.getElementsByTagName('form')[0].action = 'https://www.youtube.com/results';document.getElementsByTagName('input')[0].name = 'search_query';}, false);
+    document.getElementById('bing').addEventListener('click', function() {resetEngines();document.getElementById('bing').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'bing');document.getElementsByTagName('form')[0].action = 'https://www.bing.com/search';document.getElementsByTagName('input')[0].name = 'q';}, false);
+    document.getElementById('y').addEventListener('click', function() {resetEngines();document.getElementById('y').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'y');document.getElementsByTagName('form')[0].action = 'https://search.yahoo.com/search';document.getElementsByTagName('input')[0].name = 'p';}, false);
+    document.getElementById('sp').addEventListener('click', function() {resetEngines();document.getElementById('sp').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'sp');document.getElementsByTagName('form')[0].action = 'https://www.startpage.com/do/dsearch?pl=opensearch';document.getElementsByTagName('input')[0].name = 'query';}, false);
+    document.getElementById('1337x').addEventListener('click', function() {resetEngines();document.getElementById('1337x').style.border = '1px solid #fff';localStorage.setItem('preferredengine', '1337x');document.getElementsByTagName('form')[0].action = 'http://1337x.to/srch';document.getElementsByTagName('input')[0].name = 'search';}, false);
+    document.getElementById('searx').addEventListener('click', function() {resetEngines();document.getElementById('searx').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'searx');document.getElementsByTagName('form')[0].action = 'https://searx.me';document.getElementsByTagName('input')[0].name = 'q';}, false);
+    document.getElementById('geo').addEventListener('click', function() {resetEngines();document.getElementById('geo').style.border = '1px solid #fff';localStorage.setItem('preferredengine', 'geo');document.getElementsByTagName('form')[0].action = 'https://freegeoip.net';document.getElementsByTagName('input')[0].name = 'q';}, false);
+
+    if(localStorage.getItem('preferredengine') !== null) { eventFire(document.getElementById(localStorage.getItem('preferredengine')), 'click'); } else { document.getElementById('ddg').style.border = '1px solid #fff'; localStorage.setItem('preferredengine', 'ddg'); }
+</script>
+</body>
+</html>
